@@ -45,11 +45,17 @@ class BlockChain {
     }
 
     public getBlocks() {
-        return this.blocks;
+        // 복제된 새로운 배열 리턴
+        return [...this.blocks];
     }
 }
 
 const blockChain = new BlockChain;
-blockChain.addBlock("hi");
+blockChain.addBlock("박보성");
+blockChain.addBlock("김형준");
+//복제된 새로운 배열에 푸쉬되서 영향을 미치지 않습니다.
+blockChain.getBlocks().push(new Block("xxxx", 1111, "hack!!"));
 blockChain.addBlock("이상규");
+blockChain.addBlock("박승진");
+
 console.log(blockChain.getBlocks());
